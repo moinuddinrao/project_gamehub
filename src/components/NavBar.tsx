@@ -1,12 +1,45 @@
-import { HStack, Image } from "@chakra-ui/react";
+import { Box, Flex, Image, useBreakpointValue } from "@chakra-ui/react";
 import logo from "../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
-const NavBar = () => {
+import SearchInput from "./SearchInput";
+
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
+  const isSmallScreen = useBreakpointValue({ base: true, sm: false });
+
   return (
-    <HStack justifyContent="space-between" padding="10px">
-      <Image src={logo} boxSize="60px" />
-      <ColorModeSwitch />
-    </HStack>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      flexDirection={isSmallScreen ? "column" : "row"}
+      padding="10px"
+    >
+      {isSmallScreen ? (
+        <>
+          <Flex
+            justifyContent="space-between"
+            alignItems="center"
+            width="full"
+            marginBottom="10px"
+          >
+            <Image src={logo} boxSize="60px" />
+            <ColorModeSwitch />
+          </Flex>
+          <SearchInput onSearch={onSearch} />
+        </>
+      ) : (
+        <>
+          <Image src={logo} boxSize="60px" />
+          <Box marginX="10px" width="full">
+            <SearchInput onSearch={onSearch} />
+          </Box>
+          <ColorModeSwitch />
+        </>
+      )}
+    </Flex>
   );
 };
 
