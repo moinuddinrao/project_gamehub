@@ -28,7 +28,9 @@ const NavBar = ({ onSearch }: Props) => {
             <Image src={logo} boxSize="60px" />
             <ColorModeSwitch />
           </Flex>
-          <SearchInput onSearch={onSearch} />
+          <Box marginX="10px" width="full">
+            <SearchInput onSearch={onSearch} />
+          </Box>
         </>
       ) : (
         <>
