@@ -1,8 +1,9 @@
-# ShareMe Social Media Application
+# GameHub
+
 
 ## Introduction
-This is an social media application like Pinterest.
+GameHub is a video game discovery web app that helps you find new and interesting games to play. With GameHub, you can search for games by platform, genre, and more. 
 
-Using React and TypeScript, and Chakra UI.
+Using React, TypeScript, Chakra UI, and RAWG API.
 
 ## Live Demo: https://project-game-hub.netlify.app/
