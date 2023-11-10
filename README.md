@@ -20,4 +20,4 @@ To get started with GameHub, follow these steps:
 - Manage component state
 - Build forms with React Hook Forms
 
-### Live Demo: https://project-game-hub.netlify.app/
+### Live Demo: https://project-gamehub.netlify.app/
